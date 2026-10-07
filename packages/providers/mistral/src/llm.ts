@@ -203,7 +203,7 @@ export class MistralAI extends ToolCallLLM<ToolCallLLMMessageOptions> {
     // Non-streaming
     const client = await this.session.getClient();
     const buildParams = this.buildParams(messages, tools);
-    const response = await client.chat.complete(
+    const response = await client.chat.complete.create(
       buildParams as ChatCompletionRequest,
     );
 
